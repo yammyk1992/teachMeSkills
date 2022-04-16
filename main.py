@@ -1,8 +1,8 @@
 __author__ = 'Artem Shcherban'
 
-from teachMeSkillsMyProjects.authenticator import Authenticator
+from authenticator import Authenticator
 from random import randint
-from teachMeSkillsMyProjects.exceptions import RegistrationError, AuthorizationError
+from exceptions import RegistrationError, AuthorizationError
 
 
 def guess_number_game() -> None:
