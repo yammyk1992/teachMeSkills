@@ -38,6 +38,7 @@ class ElectricCar(Passenger):
     pass
 
 
+
 car1 = Cars()
 car1.buy()
 car1.registration()
