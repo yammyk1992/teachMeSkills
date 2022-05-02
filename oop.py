@@ -29,6 +29,7 @@ class Passenger(Cars):
     def buy(self, model="BMW"):
         print(f"Покупаем машину {self.model}, типа {self.body_type}")
 
+
     def info(self, color="Черный"):
         self.color = color
         print(f"{self.hp} лошадиных сил.{self.color} цвет!")
