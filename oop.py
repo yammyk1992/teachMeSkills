@@ -1,5 +1,5 @@
 class Cars:
-    def __init__(self, model: str = "легковая", vin_number: str = None, color: str = "белую",
+    def __init__(self, model: str = "легковая", vin_number: str = None, color: str = "белая",
                  year_of_production: int = 2022):
         self.model = model
         self._vin_number = vin_number
