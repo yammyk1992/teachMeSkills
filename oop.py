@@ -1,5 +1,5 @@
 class Cars:
-    def __init__(self, model: str = "Легковая", vin_number: str = None, color: str = "Белый",
+    def __init__(self, model: str = "легковая", vin_number: str = None, color: str = "белую",
                  year_of_production: int = 2022):
         self.model = model
         self._vin_number = vin_number
@@ -7,13 +7,10 @@ class Cars:
         self.year_of_production = year_of_production
 
     def buy(self):
-        print(f"Покупаем машину {self.model}")
+        print(f"Покупаем машину: {self.model}")
 
     def registration(self):
         print(f"Регистрируем машину {self.year_of_production} года")
-
-    def drive(self):
-        print(f"Едем на машине {self.color} цвета")
 
     def private_info(self):
         print(f"VIN: {self._vin_number}")
@@ -31,16 +28,20 @@ class Passenger(Cars):
         self.hp = hp
 
     def buy(self):
-        print(f"Покупаем машину {self.model}, типа {self.body_type}")
+        print(f"Покупаем машину {self.model}, кузов: {self.body_type}")
 
     def info(self):
-        color = "черная"
+        color = "черный"
         self.private_info()
-        print(f"{self.hp} лошадиных сил.{color} цвет!.С {self.engine_type} мотором")
+        text = f"{self.hp} лошадиных сил.{color.upper()} цвет! С мотором типа: {self.engine_type}"
+        print(text)
+
+    def drive(self):
+        print(f"Едем на машине {self.color} цвета")
 
 
 class ElectricCar(Passenger):
-    def __init__(self, model, vin_number, battery: int = 362, max_distance: int = 600, color: str = "красная"):
+    def __init__(self, model, vin_number, battery: int = 362, max_distance: int = 600, color: str = "красного"):
         super().__init__(model, vin_number)
         self.model = model
         self._vin_number = vin_number
@@ -53,15 +54,16 @@ class ElectricCar(Passenger):
 
     def info(self):
         engine_type = "электро"
+        hp = 1000
         self.private_info()
-        print(f"{self.hp} лошадиных сил.{self.color} цвета! С {engine_type} мотором. "
+        print(f"{hp} лошадиных сил.{self.color} цвета! С {engine_type} мотором. "
               f"Ёмкость баттареи {self.battery} и максимальная дистанция {self.max_distance} км")
 
 
 car1 = Cars()
 car1.buy()
 car1.registration()
-car1.drive()
+car1.private_info()
 print()
 print()
 car2 = Passenger("BMW", "BMWDASDQWF1234")
