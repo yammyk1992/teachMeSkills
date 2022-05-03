@@ -26,17 +26,29 @@ class Passenger(Cars):
         self.body_type = body_type
         self.hp = hp
 
-    def buy(self, model="BMW"):
-        print(f"Покупаем машину {self.model}, типа {self.body_type}")
+    def buy(self):
+        model = "BMW"
+        print(f"Покупаем машину {model}, типа {self.body_type}")
 
-    def info(self, color="Черный"):
-        self.color = color
-        print(f"{self.hp} лошадиных сил.{self.color} цвет!")
+    def info(self):
+        color = "Черный"
+        print(f"{self.hp} лошадиных сил.{color} цвет!.С {self.engine_type} мотором")
 
 
 class ElectricCar(Passenger):
-    pass
+    def __init__(self, battery: int = 362, max_distance: int = 600):
+        super().__init__()
+        self.battery = battery
+        self.max_distance = max_distance
 
+    def buy(self):
+        model = "TESLA"
+        print(f"Покупаем машину {model}, типа {self.body_type}")
+
+    def info(self):
+        engine_type = "Electro"
+        print(f"{self.hp} лошадиных сил.{self.color} цвет!.С {engine_type} мотором. "
+              f"Ёмкость баттареи {self.battery} и максимальная дистанция {self.max_distance} км")
 
 
 car1 = Cars()
@@ -50,3 +62,9 @@ car2.buy()
 car2.registration()
 car2.info()
 car2.drive()
+print()
+print()
+car3 = ElectricCar()
+car3.buy()
+car3.registration()
+car3.info()
