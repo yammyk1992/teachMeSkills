@@ -22,8 +22,7 @@ class Cars:
 
 
 class Passenger(Cars):
-    # def __init__(self, model, vin_number, color, year_of_production, engine_type, body_type, hp):
-    #     super().__init__(model, vin_number, color, year_of_production)
+
     def __init__(self, model, vin_number, engine_type: str = "бензиновый", body_type: str = "седан", hp: int = 500):
         super().__init__(vin_number, model)
         self.model = model
@@ -69,11 +68,9 @@ car1 = Cars()
 car1.buy()
 car1.registration()
 car1.private_info()
-car1.write_cars("легковая")
 print()
 print()
 car2 = Passenger("BMW", "BMWDASDQWF1234")
-car2.write_cars("BMW")
 car2.buy()
 car2.registration()
 car2.info()
@@ -81,11 +78,12 @@ car2.drive()
 print()
 print()
 car3 = ElectricCar("TESLA", "TESLAaASDasDASD")
-car3.write_cars("TESLA")
 car3.buy()
 car3.registration()
 car3.info()
 car3.drive()
 car4 = Passenger("Mersedes", "MERSaapsCASCas")
-car4.write_cars("Mersedes")
-print(f"Купленные машины {car2.cars}, {car3.cars}, {car4.cars}")
+car1.write_cars("BMW")
+car1.write_cars("TESLA")
+car1.write_cars("Mersedes")
+print(f"Купленные машины {car1.cars}")
