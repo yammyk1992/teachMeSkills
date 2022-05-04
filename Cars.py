@@ -1,4 +1,5 @@
 class Cars:
+
     def __init__(self, model: str = "легковая", vin_number: str = None, color: str = "белая",
                  year_of_production: int = 2022):
         self.model = model
@@ -45,6 +46,7 @@ class Passenger(Cars):
 
 
 class ElectricCar(Passenger):
+
     def __init__(self, model, vin_number, battery: int = 362, max_distance: int = 600, color: str = "красного"):
         super().__init__(model, vin_number)
         self.model = model
@@ -52,9 +54,6 @@ class ElectricCar(Passenger):
         self.battery = battery
         self.max_distance = max_distance
         self.color = color
-
-    # def buy(self):
-    #     print(f"Покупаем машину {self.model}, типа {self.body_type}")
 
     def info(self):
         engine_type = "электро"
