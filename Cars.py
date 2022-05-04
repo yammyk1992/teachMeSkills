@@ -6,6 +6,11 @@ class Cars:
         self.color = color
         self.year_of_production = year_of_production
 
+        self.cars = []
+
+    def write_cars(self, cars):
+        self.cars.append(cars)
+
     def buy(self):
         print(f"Покупаем машину: {self.model}")
 
@@ -64,6 +69,7 @@ car1 = Cars()
 car1.buy()
 car1.registration()
 car1.private_info()
+car1.write_cars("легковая")
 print()
 print()
 car2 = Passenger("BMW", "BMWDASDQWF1234")
@@ -71,6 +77,7 @@ car2.buy()
 car2.registration()
 car2.info()
 car2.drive()
+car2.write_cars("BMW")
 print()
 print()
 car3 = ElectricCar("TESLA", "TESLAaASDasDASD")
@@ -78,3 +85,5 @@ car3.buy()
 car3.registration()
 car3.info()
 car3.drive()
+car3.write_cars("TESLA")
+print(f"Купленные машины {car2.cars}, {car3.cars}")
